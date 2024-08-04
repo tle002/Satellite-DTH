@@ -1,0 +1,484 @@
+{
+	"info": {
+		"_postman_id": "bfa7c60c-4081-4546-a15f-43dc0edc9ffc",
+		"name": "Dth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30977575"
+	},
+	"item": [
+		{
+			"name": "roles",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ad1\",\r\n    \"password\": \"likepass\",\r\n    \"cPassword\": \"likepass\",\r\n    \"email\": \"shekhararpit11@gmail.com\",    \r\n    \"mobile_number\":\"7007926623\",\r\n    \"role\": \"admin\",\r\n    \"active\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5600/dth/role/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"role",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"shekhararpit11@gmail.com\",\r\n    \"password\" : \"likepass\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5600/dth/role/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"role",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJzaGVraGFyYXJwaXQxMUBnbWFpbC5jb20iLCJpYXQiOjE3MDI5ODc2MDQsImV4cCI6MTcwMjk4ODUwNH0.ZRkcX9D-VEzSjg8SHr06AKX1SFzJ9r7KBhXu_dpTNLU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/role/get-all",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"role",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJzaGVraGFyYXJwaXQxMUBnbWFpbC5jb20iLCJpYXQiOjE3MDI5ODg1MTZ9.DwdmD_iTVwji3JDwRr4lkJ8AQ9EzWnymykjXZqahJSU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/role/get/3",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"role",
+								"get",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJzaGVraGFyYXJwaXQxMUBnbWFpbC5jb20iLCJpYXQiOjE3MDI5ODg1MTZ9.DwdmD_iTVwji3JDwRr4lkJ8AQ9EzWnymykjXZqahJSU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5600/dth/role/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"role",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "channels",
+			"item": [
+				{
+					"name": "get single channel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/channel/get/name",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"channel",
+								"get",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete channel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJzaGVraGFyYXJwaXRqaUBnbWFpbC5jb20iLCJpYXQiOjE3MDE0MTY5NDQsImV4cCI6MTcwMTQxNzg0NH0.EL_2mzuPTeE-skzSzRX4Px7Lamd7u0Y3a-7Srv9sy_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/channel/delete/name",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"channel",
+								"delete",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add channel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzaGVraGFyYXJwaXQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjk4NzEyNSwiZXhwIjoxNzAyOTg4MDI1fQ.S1H2TvtFfgqZkI83y5OHj7ZMoJjxH16hOArEOoHaIyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\":\"aajtak\",\r\n        \"description\":\"news channel\",\r\n        \"category\": \"news\",\r\n        \"packId\":\"1\"\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5600/dth/channel/add",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"channel",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get channel",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/channel/get-all",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"channel",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "packages",
+			"item": [
+				{
+					"name": "get single package",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/channel/get/name",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"channel",
+								"get",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete package",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJzaGVraGFyYXJwaXRqaUBnbWFpbC5jb20iLCJpYXQiOjE3MDE0MTY5NDQsImV4cCI6MTcwMTQxNzg0NH0.EL_2mzuPTeE-skzSzRX4Px7Lamd7u0Y3a-7Srv9sy_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/package/delete/name",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"package",
+								"delete",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add package",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzaGVraGFyYXJwaXQ0QGdtYWlsLmNvbSIsImlhdCI6MTcwMjk4NzEyNSwiZXhwIjoxNzAyOTg4MDI1fQ.S1H2TvtFfgqZkI83y5OHj7ZMoJjxH16hOArEOoHaIyE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\":\"news mania\",\r\n        \"category\": \"news\",\r\n        \"duration\":\"1 year\",\r\n        \"price\":\"999\"\r\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5600/dth/package/add",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"package",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get package",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/package/get-all",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"package",
+								"get-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subscriptions",
+			"item": [
+				{
+					"name": "addPlan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzaGVraGFyYXJwaXQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDMwNjk5ODB9.DT4xdemULvfvqj7N1pOG5TQxuxIXroBrR37LT1fICk4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/subscribe/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"subscribe",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addOn",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJzaGVraGFyYXJwaXQyMUBnbWFpbC5jb20iLCJpYXQiOjE3MDMwNTAxMTZ9._TeOEem965-K1Q2FTUacXuHYSGPHN6u6UWruC14yjQ4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5600/dth/subscribe/addon/:packId",
+							"host": [
+								"localhost"
+							],
+							"port": "5600",
+							"path": [
+								"dth",
+								"subscribe",
+								"addon",
+								":packId"
+							],
+							"variable": [
+								{
+									"key": "packId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

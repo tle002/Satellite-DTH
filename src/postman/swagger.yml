@@ -1,0 +1,233 @@
+openapi: 3.0.0
+info:
+  title: Dth
+  version: 1.0.0
+servers:
+  - url: localhost://
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+    noauthAuth:
+      type: http
+      scheme: noauth
+tags:
+  - name: roles
+  - name: channels
+  - name: packages
+  - name: subscriptions
+paths:
+  /600/dth/role/register:
+    post:
+      tags:
+        - roles
+      summary: Register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: ad1
+                password: likepass
+                cPassword: likepass
+                email: shekhararpit11@gmail.com
+                mobile_number: '7007926623'
+                role: admin
+                active: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/role/login:
+    post:
+      tags:
+        - roles
+      summary: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: shekhararpit11@gmail.com
+                password: likepass
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/role/get-all:
+    get:
+      tags:
+        - roles
+      summary: all user
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/role/get/3:
+    get:
+      tags:
+        - roles
+      summary: single role
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/role/delete/1:
+    delete:
+      tags:
+        - roles
+      summary: delete role
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/channel/get/name:
+    get:
+      tags:
+        - packages
+      summary: get single package
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/channel/delete/name:
+    delete:
+      tags:
+        - channels
+      summary: delete channel
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/channel/add:
+    post:
+      tags:
+        - channels
+      summary: add channel
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: aajtak
+                description: news channel
+                category: news
+                packId: '1'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/channel/get-all:
+    get:
+      tags:
+        - channels
+      summary: get channel
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/package/delete/name:
+    delete:
+      tags:
+        - packages
+      summary: delete package
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/package/add:
+    post:
+      tags:
+        - packages
+      summary: add package
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: news mania
+                category: news
+                duration: 1 year
+                price: '999'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/package/get-all:
+    get:
+      tags:
+        - packages
+      summary: get package
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/subscribe/1:
+    post:
+      tags:
+        - subscriptions
+      summary: addPlan
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /600/dth/subscribe/addon/{packId}:
+    post:
+      tags:
+        - subscriptions
+      summary: addOn
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: packId
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
